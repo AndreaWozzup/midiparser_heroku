@@ -19,6 +19,10 @@ def parse(filename):
             if hasattr(msg, "type") and hasattr(msg, "program") and (msg.type == "program_change"):
                 instrument = GMMapping[msg.program]
                 table[i] = [i, track.name, instrument, len(track)]
+            if hasattr(msg, "type") and hasattr(msg, "channel") and (msg.type == "control_change") and (msg.channel == 9):
+                instrument = "Drums"
+                table[i] = [i, track.name, instrument, len(track)]
+
     midi_info = MidiInfo(filename, mid.length, bpm, table)
     logging.info("Filename: " + midi_info.get_filename())
     logging.info("Length: " + midi_info.get_minute() + ":" + midi_info.get_seconds())
