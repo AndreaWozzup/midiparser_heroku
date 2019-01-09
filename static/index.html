@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Upload Files</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" id="file" name="file" />
+        <input type="submit" value="Upload File" name="submit">
+    </form>
+
+    <script src="/static/upload.js"></script>
+
+    <div>
+        <div style="background-color:lightblue; font-family: Courier, monospace; font-size: 20px;">
+            <h5>FILENAME</h5>
+            <p id="title">...</p>
+        </div>
+        <div style="background-color:lightblue; font-family: Courier, monospace; font-size: 20px;">
+            <h5>LENGTH</h5>
+            <p id="length">...</p>
+        </div>
+        <div style="background-color:lightblue; font-family: Courier, monospace; font-size: 20px;">
+            <h5>BPM</h5>
+            <p id="bpm">...</p>
+        </div>
+        <div style="background-color:lightblue; font-family: Courier, monospace; font-size: 20px;">
+            <p id="body">...</p>
+        </div>
+    </div>
+
+</body>
+
+<footer>
+<p id="copyright" property="dc:rights">&copy;
+  <span property="dc:dateCopyrighted">2019</span>
+  <span property="dc:publisher">samantha.com
+  <p>Contact information: <a href="mailto:andreawozzup.gmail.com">
+  andreawozzup.gmail.com</a>.</p>
+</footer>
+
+</html>
