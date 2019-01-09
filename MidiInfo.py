@@ -7,10 +7,13 @@ def path_leaf(path):
 
 
 class MidiInfo:
-    def __init__(self, filename, length, ticks_per_beat, table):
+    def __init__(self, filename, length, bpm, table):
         self.filename = filename
         self.length = length
-        self.tick_per_beat = ticks_per_beat
+        if bpm == []:
+            self.bpm = [120]
+        else:
+            self.bpm = bpm
         self.table = table
 
     def get_minute(self):
@@ -21,8 +24,12 @@ class MidiInfo:
         return str(format(sec, '02d'))
 
     def get_bpm(self):
-        bpm = str(self.tick_per_beat)
-        return bpm
+        result = str(self.bpm[0])
+
+        for i in range(1, len(self.bpm)):
+            if self.bpm[i] != self.bpm[i - 1]:
+                result = result + " => " + str(self.bpm[i])
+        return result
 
     def get_filename(self):
         filename = path_leaf(self.filename)
